@@ -1,0 +1,23 @@
+<div class="row">
+  <div id="list" class="col-sm-4" ng-class="$state.current.name.replace('.','-')">
+    <h3>Customers</h3>
+    <div class="list-group">
+      <a ui-sref="customer.detail({ id: item.doc._id })" class="list-group-item" ng-repeat="item in daten">
+        <h4 class="list-group-item-heading">{{item.doc.companyName}}</h4>
+        <p class="list-group-item-text">
+          {{item.doc.address}}<br>
+          {{item.doc.postalCode}} {{item.doc.city}}
+          <span class="pull-right glyphicon glyphicon-menu-right"></span>
+        </p>
+      </a>
+    </div>
+  </div>
+  <div id="detail" class="col-sm-8" ng-class="$state.current.name.replace('.','-')">
+    <div class="row">
+      <div ui-view class="col-xs-12">
+        <h3>Detail view</h3>
+        Select a customer to view details...
+      </div>
+    </div>
+  </div>
+</div>
